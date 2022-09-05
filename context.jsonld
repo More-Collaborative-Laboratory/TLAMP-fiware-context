@@ -1,0 +1,23 @@
+{
+    "@context": {
+        "type": "@type",
+        "id": "@id",
+        "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
+        "connectsensors": "https://connectsensors.pt/dataModel/",
+        "schema": "https://schema.org/",
+        "Device": "connectsensors:Device",
+        "soil_temp": "connectsensors:soil_temp",
+        "soil_vwc": "connectsensors:soil_vwc",
+        "soil_ec": "connectsensors:soil_ec",
+        "soil_ph": "connectsensors:soiL_ph",
+        "air_temp": "connectsensors:air_temp",
+        "air_humidity": "connectsensors:air_humidity",
+        "gps": "connectsensors:gps",
+        "PAR_quantum": "connectsensors:PAR_quantum",
+        "led_ch1":"connectsensors:led_ch1",
+        "led_ch2":"connectsensors:led_ch2",
+        "led_ch3":"connectsensors:led_ch3",
+        "led_ch4":"connectsensors:led_ch4",
+        "led_ch5":"connectsensors:led_ch5"
+    }
+}
