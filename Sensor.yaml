@@ -1,6 +1,25 @@
 Sensor:
-  description: 'An apparatus (hardware + software + firmware) intended to accomplish a particular task (sensing the environment, actuating, etc.).'
+  title: Sensor
+  type: object
+  description: 'Sensor Node for T-LAMP Project.'
+               '* Quantum 
+                * Soil Humidity
+                * Soil Temperature
+                * Soil Condutivity
+                * Soil pH
+                * Air Temperature
+                * Air Humidity
+                * GPS'
   properties:
+    #1º
+    id:
+      description: Sensor Node UUID
+      type: string
+      format: uri
+      example: urn:ngsi-ld:Sensor:uuid
+      x-ngsi:
+        type: Property
+    #2º
     ownedBy:
         anyOf:
             - description: 'Relationship property: Identifier format of any NGSI entity'
@@ -11,9 +30,55 @@ Sensor:
             - description: 'Relationship property: Identifier format of any NGSI entity'
               format: uri
               type: string
-        description: 'Identification of the Measurement node the sensor is connected to.'
+        description: 'Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID.'
         x-ngsi:
             uri: "https://tlampproject.pt/dataModel/ownedBy/"
             uri-prefix: "https://tlampproject.pt/dataModel/"
             model: https://schema.org/URL
             type: Relationship
+    #3º
+    batteryLevel:
+      description: 'Device battery level. It must be equal to 100.0 when battery is full. 0.0 when battery is empty. -1 when transiently cannot be determined.'
+      oneOf:
+        - maximum: 100
+          minimum: 0
+          type: number
+        - maximum: -1
+          minimum: -1
+          type: number
+      x-ngsi:
+        model: https://schema.org/Number
+        type: Property
+    #4º
+    deviceState:
+      description: 'State of this device from an operational point of view. Its value can be vendor dependent.'
+      type: string
+      x-ngsi:
+        model: https://schema.org/Text
+        type: Property
+    #5º
+    serialNumber:
+      description: 'The serial number assigned by the manufacturer.'
+      type: string
+      x-ngsi:
+        model: https://schema.org/serialNumber
+        type: Property
+    #6º
+    usedBy:
+        anyOf:
+            - description: 'Relationship property: Identifier format of any NGSI entity'
+              maxLength: 256
+              minLength: 1
+              pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+              type: string
+            - description: 'Relationship property: Identifier format of any NGSI entity'
+              format: uri
+              type: string
+        description: 'Relationship to a Treatment, this Device is usedBy the Treatment Entity to retrive data'
+        x-ngsi:
+            uri: "https://tlampproject.pt/dataModel/usedBy/"
+            uri-prefix: "https://tlampproject.pt/dataModel/"
+            model: https://schema.org/URL
+            type: Relationship
+    #Sensors Types:
+        

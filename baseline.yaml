@@ -3,13 +3,12 @@ components:
   schemas: 
 
     # This is the base definition of a building
-    Building: 
+    Organization: 
       $ref: "https://fiware.github.io/tutorials.NGSI-LD/models/building.yaml#/Building"
     # This is all of the defined building categories within
     # within the Smart Cities and Smart AgriFood domain
     BuildingCategory: 
       $ref: "https://fiware.github.io/tutorials.NGSI-LD/models/openstreetmap.yaml#/Categories"
-
     # This is a base definition of an IoT Device
     Sensor: 
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/Sensor.yaml#/Sensor"
