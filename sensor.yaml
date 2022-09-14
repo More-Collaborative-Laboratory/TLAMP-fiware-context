@@ -1,15 +1,7 @@
 sensor:
   title: Sensor
   type: object
-  description: 'Sensor Node for T-LAMP Project.
-                * Quantum 
-                * Soil Humidity
-                * Soil Temperature
-                * Soil Condutivity
-                * Soil pH
-                * Air Temperature
-                * Air Humidity
-                * GPS'
+  description: 'Sensor Node for T-LAMP Project.'
   properties:
     #1º
     id:
@@ -34,7 +26,6 @@ sensor:
         x-ngsi:
             uri: "https://tlampproject.pt/dataModel/ownedBy/"
             uri-prefix: "https://tlampproject.pt/dataModel/"
-            model: https://schema.org/URL
             type: Relationship
     #3º
     batteryLevel:
@@ -78,7 +69,6 @@ sensor:
         x-ngsi:
             uri: "https://tlampproject.pt/dataModel/usedBy/"
             uri-prefix: "https://tlampproject.pt/dataModel/"
-            model: https://schema.org/URL
             type: Relationship
     #Sensors Types:
 
