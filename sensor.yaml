@@ -11,3 +11,62 @@ sensor:
       example: urn:ngsi-ld:Sensor:uuid
       x-ngsi:
         type: Property
+    #2º
+    ownedBy:
+      anyOf:
+        - description: 'Relationship property: Identifier format of any NGSI entity'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: Identifier format of any NGSI entity'
+          format: uri
+          type: string
+      description: 'Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID.'
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/ownedBy/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Relationship
+    #3º
+    batteryLevel:
+      description: 'Device battery level. It must be equal to 100.0 when battery is full. 0.0 when battery is empty. -1 when transiently cannot be determined.'
+      oneOf:
+        - maximum: 100
+          minimum: 0
+          type: number
+        - maximum: -1
+          minimum: -1
+          type: number
+      x-ngsi:
+        model: https://schema.org/Number
+        type: Property
+    #4º
+    deviceState:
+      description: 'State of this device from an operational point of view. Its value can be vendor dependent.'
+      type: string
+      x-ngsi:
+        model: https://schema.org/Text
+        type: Property
+    #5º
+    serialNumber:
+      description: 'The serial number assigned by the manufacturer.'
+      type: string
+      x-ngsi:
+        model: https://schema.org/serialNumber
+        type: Property
+    #6º
+    usedBy:
+      anyOf:
+        - description: 'Relationship property: Identifier format of any NGSI entity'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: Identifier format of any NGSI entity'
+          format: uri
+          type: string
+      description: 'Relationship to a Treatment, this Device is usedBy the Treatment Entity to retrive data'
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/usedBy/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Relationship
