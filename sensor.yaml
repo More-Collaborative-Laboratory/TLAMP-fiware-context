@@ -70,3 +70,68 @@ sensor:
         uri: "https://tlampproject.pt/dataModel/usedBy/"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Relationship
+
+    Quantum:
+      description: 'PAR Measured by SQ-521 (umol/m^-2/s^-1) - OBS: The UNIT CODE is not available, it is under review by UN/CEFACT'
+      type: number
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/Quantum/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Property
+
+
+    SoilHumidity:
+      description: 'Soil Humidity measured by SMTEC'
+      type: number
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/SoilHumidity/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Property        
+    
+    SoilTemperature:
+      description: 'Soil Temperature measured by SMTEC'
+      type: number
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/SoilTemperature/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Property        
+    
+    SoilConductivity:
+      description: 'Soil Electric Conductivity measured by SMTEC'
+      type: number
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/SoilConductivity/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Property       
+    
+    SoilpH:
+      description: 'Soil pH measured by pH sensor'
+      type: number
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/SoilpH/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Property        
+
+    AirHumidity:
+      description: 'Air Humidity measured by BME280'
+      type: number
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/AirHumidity/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Property        
+
+    AirTemperature:
+      description: 'Air Temperature measured by BME280'
+      type: number
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/AirTemperature/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Property
+
+  required:
+    - id
+    - ownedBy
+    - serialNumber
+    - deviceState
+    - batteryLevel
+    - usedBy
