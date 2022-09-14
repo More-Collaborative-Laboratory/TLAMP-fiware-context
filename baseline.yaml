@@ -17,10 +17,10 @@ components:
 
     # Definition of the Organization Entity
     Organization: 
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/Organization.yaml#organization"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/organization.yaml#/organization"
     # Definition of the Field Entity
     Field: 
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/Field.yaml#Field"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/Field.yaml#/Field"
     # Definition of the Treatment Entity
     Treatment: 
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/Treatment.yaml#/Treatment"  
