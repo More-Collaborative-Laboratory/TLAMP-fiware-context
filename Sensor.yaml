@@ -108,5 +108,75 @@ Sensor:
         type: Property
         unitCode: "CEL"
     
+    SoilConductivity:
+      description: 'Soil Electric Conductivity measured by SMTEC'
+      type: number
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/SoilConductivity/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Property
+        unitCode: "G42"
+    
+    SoilpH:
+      description: 'Soil pH measured by pH sensor'
+      type: number
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/SoilpH/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Property
+        unitCode: "Q30"
 
+    AirHumidity:
+      description: 'Air Humidity measured by BME280'
+      type: number
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/AirHumidity/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Property
+        unitCode: "P1"
 
+    AirTemperature:
+      description: 'Air Temperature measured by BME280'
+      type: number
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/AirTemperature/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Property
+        unitCode: "CEL"
+    
+    GPS:
+      location:
+      description: 'Geojson reference to the item. Must be a point'   
+          properties:
+            bbox:
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              items:
+                type: number
+              minItems: 2
+              type: array
+            type:
+              enum:
+                - Point
+              type: string
+          required:
+            - type
+            - coordinates
+          title: 'GeoJSON Point'
+          type: object
+      x-ngsi:
+        uri: "https://uri.etsi.org/ngsi-ld/location"
+        uri-prefix: "https://uri.etsi.org/ngsi-ld/"
+        type: GeoProperty
+
+  required:
+    - id
+    - ownedBy
+    - serialNumber
+    - deviceState
+    - batteryLevel
+    - usedBy
+    - GPS
