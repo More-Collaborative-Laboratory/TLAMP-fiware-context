@@ -20,19 +20,19 @@ components:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/organization.yaml#/organization"
     # Definition of the Field Entity
     Field: 
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/Field.yaml#/Field"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/field.yaml#/field"
     # Definition of the Treatment Entity
     Treatment: 
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/Treatment.yaml#/Treatment"  
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/treatment.yaml#/treatment"  
     # Definition of the Car Entity
     Car: 
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/Car.yaml#/Car"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/car.yaml#/car"
     # Definition of the Channel Entity
     Channel:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/Channel.yaml#/Channel"
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/channel.yaml#/channel"
     # Definition of Sensor Node Entity
     Sensor: 
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/Sensor.yaml#/Sensor"  
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/sensor.yaml#/sensor"  
 
 paths: 
   /ngsi-ld/v1/entities: 
