@@ -33,6 +33,7 @@ components:
     # Definition of Sensor Node Entity
     Sensor: 
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/sensor.yaml#"
+      
 
 paths: 
   /ngsi-ld/v1/entities: 
