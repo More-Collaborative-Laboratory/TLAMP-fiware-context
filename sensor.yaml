@@ -1,4 +1,4 @@
-Sensor:
+sensor:
   title: Sensor
   type: object
   description: 'Sensor Node for T-LAMP Project.'
