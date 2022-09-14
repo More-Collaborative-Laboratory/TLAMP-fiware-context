@@ -130,19 +130,21 @@ sensor:
     
     location:
       description: 'Geoproperty. Geojson reference to the item. Point'
-      coordinates:
-        items:
-          type: number
-        minItems: 2
-        type: array
-      type:
-        enum:
-          - Point
-        type: string
+      properties:
+        coordinates:
+          items:
+            type: number
+          minItems: 2
+          type: array
+        type:
+          enum:
+            - Point
+          type: string
       required:
         - type
         - coordinates
       title: 'GeoJSON Point'
+      type: object
       x-ngsi:
         uri: "https://uri.etsi.org/ngsi-ld/location"
         uri-prefix: "https://uri.etsi.org/ngsi-ld/"
