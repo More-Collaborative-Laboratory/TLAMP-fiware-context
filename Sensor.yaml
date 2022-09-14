@@ -81,4 +81,32 @@ Sensor:
             model: https://schema.org/URL
             type: Relationship
     #Sensors Types:
-        
+    Quantum:
+      description: 'PAR Measured by SQ-521 (umol/m^-2/s^-1) - OBS: The UNIT CODE is not available, it is under review by UN/CEFACT'
+      type: number
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/Quantum/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Property
+
+
+    SoilHumidity:
+      description: 'Soil Humidity measured by SMTEC'
+      type: number
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/SoilHumidity/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Property
+        unitCode: "P1"
+    
+    SoilTemperature:
+      description: 'Soil Temperature measured by SMTEC'
+      type: number
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/SoilTemperature/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Property
+        unitCode: "CEL"
+    
+
+
