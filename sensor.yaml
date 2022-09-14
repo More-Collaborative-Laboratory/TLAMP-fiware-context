@@ -71,62 +71,82 @@ sensor:
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Relationship
 
-    Quantum:
+    quantum:
       description: 'PAR Measured by SQ-521 (umol/m^-2/s^-1) - OBS: The UNIT CODE is not available, it is under review by UN/CEFACT'
       type: number
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/Quantum/"
+        uri: "https://tlampproject.pt/dataModel/quantum/"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Property
 
 
-    SoilHumidity:
+    soilHumidity:
       description: 'Soil Humidity measured by SMTEC'
       type: number
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/SoilHumidity/"
+        uri: "https://tlampproject.pt/dataModel/soilHumidity/"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Property        
     
-    SoilTemperature:
+    soilTemperature:
       description: 'Soil Temperature measured by SMTEC'
       type: number
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/SoilTemperature/"
+        uri: "https://tlampproject.pt/dataModel/soilTemperature/"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Property        
     
-    SoilConductivity:
+    soilConductivity:
       description: 'Soil Electric Conductivity measured by SMTEC'
       type: number
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/SoilConductivity/"
+        uri: "https://tlampproject.pt/dataModel/soilConductivity/"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Property       
     
-    SoilpH:
+    soilPh:
       description: 'Soil pH measured by pH sensor'
       type: number
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/SoilpH/"
+        uri: "https://tlampproject.pt/dataModel/soilPh/"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Property        
 
-    AirHumidity:
+    airHumidity:
       description: 'Air Humidity measured by BME280'
       type: number
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/AirHumidity/"
+        uri: "https://tlampproject.pt/dataModel/airHumidity/"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Property        
 
-    AirTemperature:
+    airTemperature:
       description: 'Air Temperature measured by BME280'
       type: number
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/AirTemperature/"
+        uri: "https://tlampproject.pt/dataModel/airTemperature/"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Property
+    
+    location:
+      description: 'Geoproperty. Geojson reference to the item. Point'
+      coordinates:
+        items:
+          type: number
+        minItems: 2
+        type: array
+      type:
+        enum:
+          - Point
+        type: string
+      required:
+        - type
+        - coordinates
+      title: 'GeoJSON Point'
+      x-ngsi:
+        uri: "https://uri.etsi.org/ngsi-ld/location"
+        uri-prefix: "https://uri.etsi.org/ngsi-ld/"
+        type: GeoProperty     
 
   required:
     - id
