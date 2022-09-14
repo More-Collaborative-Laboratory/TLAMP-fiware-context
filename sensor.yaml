@@ -96,8 +96,7 @@ sensor:
       x-ngsi:
         uri: "https://tlampproject.pt/dataModel/SoilHumidity/"
         uri-prefix: "https://tlampproject.pt/dataModel/"
-        type: Property
-        unitCode: "P1"
+        type: Property        
     
     SoilTemperature:
       description: 'Soil Temperature measured by SMTEC'
@@ -105,8 +104,7 @@ sensor:
       x-ngsi:
         uri: "https://tlampproject.pt/dataModel/SoilTemperature/"
         uri-prefix: "https://tlampproject.pt/dataModel/"
-        type: Property
-        unitCode: "CEL"
+        type: Property        
     
     SoilConductivity:
       description: 'Soil Electric Conductivity measured by SMTEC'
@@ -114,8 +112,7 @@ sensor:
       x-ngsi:
         uri: "https://tlampproject.pt/dataModel/SoilConductivity/"
         uri-prefix: "https://tlampproject.pt/dataModel/"
-        type: Property
-        unitCode: "G42"
+        type: Property       
     
     SoilpH:
       description: 'Soil pH measured by pH sensor'
@@ -123,8 +120,7 @@ sensor:
       x-ngsi:
         uri: "https://tlampproject.pt/dataModel/SoilpH/"
         uri-prefix: "https://tlampproject.pt/dataModel/"
-        type: Property
-        unitCode: "Q30"
+        type: Property        
 
     AirHumidity:
       description: 'Air Humidity measured by BME280'
@@ -132,8 +128,7 @@ sensor:
       x-ngsi:
         uri: "https://tlampproject.pt/dataModel/AirHumidity/"
         uri-prefix: "https://tlampproject.pt/dataModel/"
-        type: Property
-        unitCode: "P1"
+        type: Property        
 
     AirTemperature:
       description: 'Air Temperature measured by BME280'
@@ -142,9 +137,7 @@ sensor:
         uri: "https://tlampproject.pt/dataModel/AirTemperature/"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Property
-        unitCode: "CEL"
-    
- 
+         
 
 
   required:
