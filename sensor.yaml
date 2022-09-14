@@ -1,8 +1,8 @@
 sensor:
   title: Sensor
   type: object
-  description: 'Sensor Node for T-LAMP Project.'
-               '* Quantum 
+  description: 'Sensor Node for T-LAMP Project.
+                * Quantum 
                 * Soil Humidity
                 * Soil Temperature
                 * Soil Condutivity
