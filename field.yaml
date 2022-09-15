@@ -5,7 +5,7 @@ field:
   properties:
     #1º
     id:
-      description: Car UUID
+      description: Field UUID
       type: string
       format: uri
       example: urn:ngsi-ld:Building:[Field_uuid]
@@ -106,18 +106,24 @@ field:
       description: ' The seed types used in the current field'
       type: string
       x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/seedType/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
         model: https://schema.org/Text
         type: Property
     
     fieldWidth:
-      type: string
+      type: number
       x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/fieldWidth/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
         model: https://schema.org/serialNumber
         type: Property
 
     fieldHeight:
-      type: string
+      type: number
       x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/fieldHeight/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
         model: https://schema.org/serialNumber
         type: Property
 
