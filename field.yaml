@@ -62,7 +62,7 @@ field:
     category: 
       description: "The categories that this building belongs to"
       allOf:
-        - $ref: "./openstreetmap.yaml#/Categories"
+        - $ref: "https://fiware.github.io/tutorials.NGSI-LD/models/openstreetmap.yaml#/Categories"
       type: string
       x-ngsi: 
         type: EnumProperty
@@ -281,5 +281,5 @@ field:
       x-ngsi:
         type: Geoproperty
 
-Categories: 
-  $ref: "https://fiware.github.io/tutorials.NGSI-LD/models/openstreetmap.yaml#/Categories"
+
+  
