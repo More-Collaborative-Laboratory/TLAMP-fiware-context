@@ -12,8 +12,52 @@ field:
       x-ngsi:
         type: Property
 
-    address: 
-      $ref: "./schema.org.yaml#/address"
+    address:
+      description: The company's headquarters address
+      type: object
+      title: Address
+      properties:
+        streetAddress:
+          description: Street name
+          type: string         
+          example: Rua de São Bento
+          x-ngsi:
+            uri: "https://schema.org/streetAddress"
+            uri-prefix: "https://schema.org/"
+            model: https://schema.org/streetAddress
+            type: Property
+        postalCode:
+          description: Postal code
+          type: string
+          example: 1249-068
+          x-ngsi:
+            uri: "https://schema.org/postalCode"
+            uri-prefix: "https://schema.org/"
+            model: https://schema.org/postalCode
+            type: Property              
+        addressLocality:
+          description: Name of the city or location
+          type: string
+          example: Lisboa
+          x-ngsi:
+            uri: "https://schema.org/addressLocality"
+            uri-prefix: "https://schema.org/"
+            model: https://schema.org/addressLocality
+            type: Property             
+        addressCountry:
+          description: Country where the company has its headquarters
+          type: string
+          example: Portugal
+          x-ngsi:
+            uri: "https://schema.org/addressCountry"
+            uri-prefix: "https://schema.org/"
+            model: https://schema.org/addressCountry
+            type: Property
+      x-ngsi:
+        uri: "https://schema.org/address"
+        uri-prefix: "https://schema.org/"
+        model: https://schema.org/address
+        type: Property
 
     category: 
       description: "The categories that this building belongs to"
@@ -23,6 +67,24 @@ field:
       x-ngsi: 
         type: EnumProperty
         uri-prefix: "https://wiki.openstreetmap.org/wiki/Tag:building%3D"
+    
+    dateCreated:
+      description: Date that the Organization was Created in data base.
+      type: string
+      x-ngsi:
+        uri: "https://schema.org/dateCreated/"
+        uri-prefix: "https://schema.org/"
+        model: "https://schema.org/dateCreated/"
+        type: Property
+    
+    dateModified:
+      description: Date that any information about Organization was modified.
+      type: string
+      x-ngsi:
+        uri: "https://schema.org/dateModified/"
+        uri-prefix: "https://schema.org/"
+        model: "https://schema.org/dateModified/"
+        type: Property 
 
     ownedBy:
       anyOf:
@@ -213,3 +275,5 @@ field:
       x-ngsi:
         type: Geoproperty
 
+Categories: 
+  $ref: "https://fiware.github.io/tutorials.NGSI-LD/models/openstreetmap.yaml#/Categories"
