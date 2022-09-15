@@ -1,1 +1,133 @@
+car:
+  title: Car
+  type: object
+  description: 'Car Device for T-LAMP Project.'
+  properties:
+    #1º
+    id:
+      description: Car UUID
+      type: string
+      format: uri
+      example: urn:ngsi-ld:Car:uuid
+      x-ngsi:
+        type: Property
+    #2º
+    ownedBy:
+      anyOf:
+        - description: 'Relationship property: Identifier format of any NGSI entity'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: Identifier format of any NGSI entity'
+          format: uri
+          type: string
+      description: 'Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID.'
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/ownedBy/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Relationship
+    #3º
+    deviceState:
+      description: 'State of this device from an operational point of view. Its value can be vendor dependent.'
+      type: string
+      x-ngsi:
+        model: https://schema.org/Text
+        type: Property
+    #4º
+    serialNumber:
+      description: 'The serial number assigned by the manufacturer.'
+      type: string
+      x-ngsi:
+        model: https://schema.org/serialNumber
+        type: Property
+    #5º
+    usedBy:
+      anyOf:
+        - description: 'Relationship property: Identifier format of any NGSI entity'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: Identifier format of any NGSI entity'
+          format: uri
+          type: string
+      description: 'Relationship to a Treatment, this Device is usedBy the Treatment Entity to retrive data'
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/usedBy/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Relationship   
+    #6º
+    supportedProtocol: 
+      description: "This will differentiate a Car Master ( LTE ) or Car Slave ( BLE )."
+      allOf:
+        - $ref: "./car.yaml#/SupportedProtocol"
+      type: string
+      x-ngsi: 
+        type: EnumProperty
+    #7º
+    location:
+      description: 'Geoproperty. Geojson reference to the item. Point'
+      properties:
+        coordinates:
+          items:
+            type: number
+          minItems: 2
+          type: array
+        type:
+          enum:
+            - Point
+          type: string
+      required:
+        - type
+        - coordinates
+      title: 'GeoJSON Point'
+      type: object
+      x-ngsi:
+        uri: "https://uri.etsi.org/ngsi-ld/location"
+        uri-prefix: "https://uri.etsi.org/ngsi-ld/"
+        type: GeoProperty
+    #8º
+    voltage:
+      description: 'Car Voltage value corresponding to this observation.'
+      type: number
+      x-ngsi:
+        model: https://schema.org/Number
+        type: Property
+    #9º
+    powerConsumption:
+      description: 'Power consumed by the Car.'
+      type: number
+      x-ngsi:
+        model: https://schema.org/Number
+        type: Property
+    #10º
+    powerFactor:
+      description: 'Power factor or the ratio of working power of the Car corresponding to this observation.'
+      type: number
+      x-ngsi:
+        model: https://schema.org/Number
+        type: Property
+    #11º
+    frequency:
+      description: 'Car''s voltage frequency observed.'''
+      type: number
+      x-ngsi:
+        model: https://schema.org/Number
+        type: Property
 
+
+
+SupportedProtocol: 
+  description: >
+      -   `lte-m`
+      -   `ble - Bluetooth Low Energy`
+
+
+  enum:
+    - lte-m
+    - ble
+
+  type: string
+  x-ngsi: 
+    uri-prefix: "https://uri.fiware.org/ns/data-models#"
