@@ -29,7 +29,7 @@ channel:
         type: Relationship
     #3º
     controllingMethod:
-      description: 'The method used to control this streetlight. Enum:''group, individual''. '
+      description: 'The method used to control this channel. Enum:''group, individual''. '
       enum:
         - group
         - individual

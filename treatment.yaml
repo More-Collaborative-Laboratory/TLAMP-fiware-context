@@ -1,2 +1,227 @@
 treatment:
-  
+  title: Treatment
+  type: object
+  description: Describes the treatment entity
+  properties:
+    #1º id: Mandatory
+    id:
+      description: Organization Identifier
+      type: string
+      format: uri
+      example: urn:ngsi-ld:Treatment:[Treatment_UUID]
+      x-ngsi:
+        type: Property
+    #2º
+    treatmentState:
+      description: ' The treatment state, there are  '
+      enum:
+        - wainting
+        - ongoing
+        - finished
+      type: string
+      x-ngsi:
+        type: Property
+    #3º
+    begin:
+      description: ' DateTime that the treatment REALY begun '
+      type: string
+      x-ngsi:
+        uri: https://schema.org/Schedule
+        uri-prefix: https://schema.org/
+        model: https://schema.org/Schedule
+        type: Property
+    #4º
+    estimatedBegin:
+      description: 'DateTime to estimate a begin to treatment'
+      type: string
+      x-ngsi:
+        uri: https://schema.org/Schedule
+        uri-prefix: https://schema.org/
+        model: https://schema.org/Schedule
+        type: Property
+    #5º
+    duration:
+      description: 'Tthe REAL durantion of the treatment'
+      type: string
+      x-ngsi:
+        uri: https://schema.org/Schedule
+        uri-prefix: https://schema.org/
+        model: https://schema.org/Schedule
+        type: Property
+    #6º
+    estimatedDuration:
+      description: 'Tthe REAL durantion of the treatment'
+      type: string
+      x-ngsi:
+        uri: https://schema.org/Schedule
+        uri-prefix: https://schema.org/
+        model: https://schema.org/Schedule
+        type: Property
+    #7º
+    radius:
+      description: 'The radius to create an area for the treatment'
+      type: number
+      x-ngsi:
+        model: https://schema.org/Number
+        type: Property
+    #8º
+    treatmentType:
+      description: 'The treatment type'
+      type: string
+      x-ngsi:
+        model: https://schema.org/Text
+        type: Property
+    
+    location:
+      description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'
+      oneOf:
+        - description: 'Geoproperty. Geojson reference to the item. Point'
+          properties:
+            bbox:
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              items:
+                type: number
+              minItems: 2
+              type: array
+            type:
+              enum:
+                - Point
+              type: string
+          required:
+            - type
+            - coordinates
+          title: 'GeoJSON Point'
+          type: object
+        - description: 'Geoproperty. Geojson reference to the item. LineString'
+          properties:
+            bbox:
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              items:
+                items:
+                  type: number
+                minItems: 2
+                type: array
+              minItems: 2
+              type: array
+            type:
+              enum:
+                - LineString
+              type: string
+          required:
+            - type
+            - coordinates
+          title: 'GeoJSON LineString'
+          type: object
+        - description: 'Geoproperty. Geojson reference to the item. Polygon'
+          properties:
+            bbox:
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              items:
+                items:
+                  items:
+                    type: number
+                  minItems: 2
+                  type: array
+                minItems: 4
+                type: array
+              type: array
+            type:
+              enum:
+                - Polygon
+              type: string
+          required:
+            - type
+            - coordinates
+          title: 'GeoJSON Polygon'
+          type: object
+        - description: 'Geoproperty. Geojson reference to the item. MultiPoint'
+          properties:
+            bbox:
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              items:
+                items:
+                  type: number
+                minItems: 2
+                type: array
+              type: array
+            type:
+              enum:
+                - MultiPoint
+              type: string
+          required:
+            - type
+            - coordinates
+          title: 'GeoJSON MultiPoint'
+          type: object
+        - description: 'Geoproperty. Geojson reference to the item. MultiLineString'
+          properties:
+            bbox:
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              items:
+                items:
+                  items:
+                    type: number
+                  minItems: 2
+                  type: array
+                minItems: 2
+                type: array
+              type: array
+            type:
+              enum:
+                - MultiLineString
+              type: string
+          required:
+            - type
+            - coordinates
+          title: 'GeoJSON MultiLineString'
+          type: object
+        - description: 'Geoproperty. Geojson reference to the item. MultiLineString'
+          properties:
+            bbox:
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              items:
+                items:
+                  items:
+                    items:
+                      type: number
+                    minItems: 2
+                    type: array
+                  minItems: 4
+                  type: array
+                type: array
+              type: array
+            type:
+              enum:
+                - MultiPolygon
+              type: string
+          required:
+            - type
+            - coordinates
+          title: 'GeoJSON MultiPolygon'
+          type: object
+      x-ngsi:
+        type: Geoproperty
