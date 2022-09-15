@@ -1,1 +1,62 @@
-
+channel:
+  title: Channel
+  type: object
+  description: 'Channel for T-LAMP Project.'
+  properties:
+    #1º
+    id:
+      description: Channel UUID
+      type: string
+      format: uri
+      example: urn:ngsi-ld:Channel:Channel_uuid
+      x-ngsi:
+        type: Property
+    #2º
+    usedBy:
+      anyOf:
+        - description: 'Relationship property: Identifier format of any NGSI entity'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: Identifier format of any NGSI entity'
+          format: uri
+          type: string
+      description: 'Relationship to a Treatment, this Device is usedBy the Treatment Entity to retrive data'
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/usedBy/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Relationship
+    #3º
+    controllingMethod:
+      description: 'The method used to control this streetlight. Enum:''group, individual''. '
+      enum:
+        - group
+        - individual
+      type: string
+      x-ngsi:
+        type: Property
+    #4º
+    observationDateTime:
+      description: 'Last reported time of observation.'
+      format: date-time
+      type: string
+      x-ngsi:
+        model: https://schema.org/Text
+        type: Property
+    #5º
+    currentValue:
+      description: 'Current value of the streetlight corresponding to this observation.'
+      type: number
+      x-ngsi:
+        model: https://schema.org/Number
+        type: Property
+    #6º
+    channelType:
+      description: 'Attribute to identify if the current channel is a LED or Infrared.'
+      enum:
+        - LED
+        - InfraRed
+      type: string
+      x-ngsi:
+        type: Property          
