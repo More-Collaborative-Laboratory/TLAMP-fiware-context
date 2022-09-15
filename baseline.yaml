@@ -26,7 +26,7 @@ components:
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/treatment.yaml#/treatment"
     # Definition of the Profile Entity
     Profile:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/profile.yaml"  
+      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/profile.yaml#/profile"  
     # Definition of the Car Entity
     Car: 
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/car.yaml#/car"
