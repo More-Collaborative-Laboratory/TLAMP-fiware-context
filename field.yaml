@@ -1,2 +1,215 @@
 field:
-  
+  title: Field
+  type: object
+  description: 'Field Entity for T-LAMP Project.'
+  properties:
+    #1º
+    id:
+      description: Car UUID
+      type: string
+      format: uri
+      example: urn:ngsi-ld:Building:[Field_uuid]
+      x-ngsi:
+        type: Property
+
+    address: 
+      $ref: "./schema.org.yaml#/address"
+
+    category: 
+      description: "The categories that this building belongs to"
+      allOf:
+        - $ref: "./openstreetmap.yaml#/Categories"
+      type: string
+      x-ngsi: 
+        type: EnumProperty
+        uri-prefix: "https://wiki.openstreetmap.org/wiki/Tag:building%3D"
+
+    ownedBy:
+      anyOf:
+        - description: 'Relationship property: Identifier format of any NGSI entity'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: Identifier format of any NGSI entity'
+          format: uri
+          type: string
+      description: 'Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID.'
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/ownedBy/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Relationship
+
+    seedType:
+      description: ' The seed types used in the current field'
+      type: string
+      x-ngsi:
+        model: https://schema.org/Text
+        type: Property
+    
+    fieldWidth:
+      type: string
+      x-ngsi:
+        model: https://schema.org/serialNumber
+        type: Property
+
+    fieldHeight:
+      type: string
+      x-ngsi:
+        model: https://schema.org/serialNumber
+        type: Property
+
+    location:
+      description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'
+      oneOf:
+        - description: 'Geoproperty. Geojson reference to the item. Point'
+          properties:
+            bbox:
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              items:
+                type: number
+              minItems: 2
+              type: array
+            type:
+              enum:
+                - Point
+              type: string
+          required:
+            - type
+            - coordinates
+          title: 'GeoJSON Point'
+          type: object
+        - description: 'Geoproperty. Geojson reference to the item. LineString'
+          properties:
+            bbox:
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              items:
+                items:
+                  type: number
+                minItems: 2
+                type: array
+              minItems: 2
+              type: array
+            type:
+              enum:
+                - LineString
+              type: string
+          required:
+            - type
+            - coordinates
+          title: 'GeoJSON LineString'
+          type: object
+        - description: 'Geoproperty. Geojson reference to the item. Polygon'
+          properties:
+            bbox:
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              items:
+                items:
+                  items:
+                    type: number
+                  minItems: 2
+                  type: array
+                minItems: 4
+                type: array
+              type: array
+            type:
+              enum:
+                - Polygon
+              type: string
+          required:
+            - type
+            - coordinates
+          title: 'GeoJSON Polygon'
+          type: object
+        - description: 'Geoproperty. Geojson reference to the item. MultiPoint'
+          properties:
+            bbox:
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              items:
+                items:
+                  type: number
+                minItems: 2
+                type: array
+              type: array
+            type:
+              enum:
+                - MultiPoint
+              type: string
+          required:
+            - type
+            - coordinates
+          title: 'GeoJSON MultiPoint'
+          type: object
+        - description: 'Geoproperty. Geojson reference to the item. MultiLineString'
+          properties:
+            bbox:
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              items:
+                items:
+                  items:
+                    type: number
+                  minItems: 2
+                  type: array
+                minItems: 2
+                type: array
+              type: array
+            type:
+              enum:
+                - MultiLineString
+              type: string
+          required:
+            - type
+            - coordinates
+          title: 'GeoJSON MultiLineString'
+          type: object
+        - description: 'Geoproperty. Geojson reference to the item. MultiLineString'
+          properties:
+            bbox:
+              items:
+                type: number
+              minItems: 4
+              type: array
+            coordinates:
+              items:
+                items:
+                  items:
+                    items:
+                      type: number
+                    minItems: 2
+                    type: array
+                  minItems: 4
+                  type: array
+                type: array
+              type: array
+            type:
+              enum:
+                - MultiPolygon
+              type: string
+          required:
+            - type
+            - coordinates
+          title: 'GeoJSON MultiPolygon'
+          type: object
+      x-ngsi:
+        type: Geoproperty
+

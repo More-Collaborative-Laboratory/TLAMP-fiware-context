@@ -17,6 +17,7 @@ treatment:
       enum:
         - wainting
         - ongoing
+        - paused
         - finished
       type: string
       x-ngsi:
