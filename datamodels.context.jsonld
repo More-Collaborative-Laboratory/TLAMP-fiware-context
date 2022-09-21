@@ -1,0 +1,1379 @@
+{
+    "@context": {
+        "type": "@type",
+        "id": "@id",
+        "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
+        "tlamp": "https://tlampproject.pt/dataModel/",
+        "schema": "https://schema.org/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "Car": "tlamp:Car",
+        "Channel": "tlamp:Channel",
+        "Field": "tlamp:Field",
+        "Organization": "tlamp:Organization",
+        "Profile": "tlamp:Profile",
+        "Sensor": "tlamp:Sensor",
+        "Treatment": "tlamp:Treatment",
+        "address": "schema:address",
+        "addressCountry": {
+            "@id": "schema:addressCountry",
+            "@type": "xsd:string"
+        },
+        "addressLocality": {
+            "@id": "schema:addressLocality",
+            "@type": "xsd:string"
+        },
+        "airHumidity": {
+            "@id": "tlamp:airHumidity/",
+            "@type": "xsd:number"
+        },
+        "airTemperature": {
+            "@id": "tlamp:airTemperature/",
+            "@type": "xsd:number"
+        },
+        "batteryLevel": {
+            "@id": "tlamp:batteryLevel",
+            "@type": "xsd:undefined"
+        },
+        "begin": {
+            "@id": "schema:Schedule",
+            "@type": "xsd:string"
+        },
+        "category": {
+            "@id": "https://wiki.openstreetmap.org/wiki/Tag:building%3Dcategory",
+            "@type": "@vocab"
+        },
+        "channel1": {
+            "@id": "tlamp:channel1/",
+            "@type": "@id"
+        },
+        "channel2": {
+            "@id": "tlamp:channel2/",
+            "@type": "@id"
+        },
+        "channel3": {
+            "@id": "tlamp:channel3/",
+            "@type": "@id"
+        },
+        "channel4": {
+            "@id": "tlamp:channel4/",
+            "@type": "@id"
+        },
+        "channel5": {
+            "@id": "tlamp:channel5/",
+            "@type": "@id"
+        },
+        "channelType": {
+            "@id": "tlamp:channelType",
+            "@type": "xsd:string"
+        },
+        "controllingMethod": {
+            "@id": "tlamp:controllingMethod",
+            "@type": "xsd:string"
+        },
+        "coordinates": {
+            "@id": "ngsi-ld:coordinates",
+            "@type": "xsd:array"
+        },
+        "currentValue": {
+            "@id": "tlamp:currentValue",
+            "@type": "xsd:number"
+        },
+        "dateCreated": {
+            "@id": "schema:dateCreated/",
+            "@type": "xsd:string"
+        },
+        "dateModified": {
+            "@id": "schema:dateModified/",
+            "@type": "xsd:string"
+        },
+        "deviceState": {
+            "@id": "tlamp:deviceState",
+            "@type": "xsd:string"
+        },
+        "duration": {
+            "@id": "schema:Schedule",
+            "@type": "xsd:string"
+        },
+        "email": {
+            "@id": "schema:email",
+            "@type": "xsd:string"
+        },
+        "estimatedBegin": {
+            "@id": "schema:Schedule",
+            "@type": "xsd:string"
+        },
+        "estimatedDuration": {
+            "@id": "schema:Schedule",
+            "@type": "xsd:string"
+        },
+        "fieldHeight": {
+            "@id": "tlamp:fieldHeight/",
+            "@type": "xsd:number"
+        },
+        "fieldWidth": {
+            "@id": "tlamp:fieldWidth/",
+            "@type": "xsd:number"
+        },
+        "frequency": {
+            "@id": "tlamp:frequency",
+            "@type": "xsd:number"
+        },
+        "legalName": {
+            "@id": "tlamp:legalName",
+            "@type": "xsd:string"
+        },
+        "location": "ngsi-ld:location",
+        "observationDateTime": {
+            "@id": "tlamp:observationDateTime",
+            "@type": "xs:dateTime"
+        },
+        "ownedBy": {
+            "@id": "tlamp:ownedBy/",
+            "@type": "@id"
+        },
+        "postalCode": {
+            "@id": "schema:postalCode",
+            "@type": "xsd:string"
+        },
+        "powerConsumption": {
+            "@id": "tlamp:powerConsumption",
+            "@type": "xsd:number"
+        },
+        "powerFactor": {
+            "@id": "tlamp:powerFactor",
+            "@type": "xsd:number"
+        },
+        "predefined": {
+            "@id": "tlamp:predefined/",
+            "@type": "xsd:string"
+        },
+        "quantum": {
+            "@id": "tlamp:quantum/",
+            "@type": "xsd:number"
+        },
+        "radius": {
+            "@id": "tlamp:radius",
+            "@type": "xsd:number"
+        },
+        "seedType": {
+            "@id": "tlamp:seedType/",
+            "@type": "xsd:string"
+        },
+        "serialNumber": {
+            "@id": "tlamp:serialNumber",
+            "@type": "xsd:string"
+        },
+        "soilConductivity": {
+            "@id": "tlamp:soilConductivity/",
+            "@type": "xsd:number"
+        },
+        "soilHumidity": {
+            "@id": "tlamp:soilHumidity/",
+            "@type": "xsd:number"
+        },
+        "soilPh": {
+            "@id": "tlamp:soilPh/",
+            "@type": "xsd:number"
+        },
+        "soilTemperature": {
+            "@id": "tlamp:soilTemperature/",
+            "@type": "xsd:number"
+        },
+        "streetAddress": {
+            "@id": "schema:streetAddress",
+            "@type": "xsd:string"
+        },
+        "supportedProtocol": {
+            "@id": "tlamp:supportedProtocol",
+            "@type": "@vocab"
+        },
+        "taxId": {
+            "@id": "schema:taxID",
+            "@type": "xsd:string"
+        },
+        "telephone": {
+            "@id": "schema:telephone",
+            "@type": "xsd:string"
+        },
+        "treatmentState": {
+            "@id": "tlamp:treatmentState",
+            "@type": "xsd:string"
+        },
+        "treatmentType": {
+            "@id": "tlamp:treatmentType",
+            "@type": "xsd:string"
+        },
+        "url": {
+            "@id": "schema:url",
+            "@type": "xsd:string"
+        },
+        "usedBy": {
+            "@id": "tlamp:usedBy/",
+            "@type": "@id"
+        },
+        "voltage": {
+            "@id": "tlamp:voltage",
+            "@type": "xsd:number"
+        }
+    },
+    "@graph": [
+        {
+            "@id": "tlamp:Organization",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Describes the organization entity"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Organization"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "tlamp:Field",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Field Entity for T-LAMP Project."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Field"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "tlamp:Treatment",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Describes the treatment entity"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Treatment"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "tlamp:Profile",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Profile Entity for T-LAMP Project."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Profile"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "tlamp:Car",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Car Device for T-LAMP Project."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Car"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "tlamp:Channel",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Channel for T-LAMP Project."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Channel"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "tlamp:Sensor",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Sensor Node for T-LAMP Project."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Sensor"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "tlamp:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Organization Identifier"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:legalName",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Organization's legal name"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "legalName"
+                }
+            ]
+        },
+        {
+            "@id": "schema:taxId",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The organization's tax number"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "taxId"
+                }
+            ]
+        },
+        {
+            "@id": "schema:dateCreated",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Date that the Organization was Created in data base."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dateCreated"
+                }
+            ]
+        },
+        {
+            "@id": "schema:dateModified",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Date that any information about Organization was modified."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dateModified"
+                }
+            ]
+        },
+        {
+            "@id": "schema:email",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Contact email address"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "email"
+                }
+            ]
+        },
+        {
+            "@id": "schema:telephone",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Mobile or telephone contact"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "telephone"
+                }
+            ]
+        },
+        {
+            "@id": "schema:address",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The company's headquarters address"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "address"
+                }
+            ]
+        },
+        {
+            "@id": "schema:url",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Oganization Web Site"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "url"
+                }
+            ]
+        },
+        {
+            "@id": "ngsi-ld:location",
+            "@type": "ngsi-ld:GeoProperty",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "location"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Field UUID"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "schema:address",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The company's headquarters address"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "address"
+                }
+            ]
+        },
+        {
+            "@id": "https://wiki.openstreetmap.org/wiki/Tag:building%3Dcategory",
+            "@type": "ngsi-ld:EnumProperty",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The categories that this building belongs to"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "category"
+                }
+            ]
+        },
+        {
+            "@id": "schema:dateCreated",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Date that the Organization was Created in data base."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dateCreated"
+                }
+            ]
+        },
+        {
+            "@id": "schema:dateModified",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Date that any information about Organization was modified."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "dateModified"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:ownedBy",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "ownedBy"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:seedType",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The seed types used in the current field"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "seedType"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:fieldWidth",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": ""
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "fieldWidth"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:fieldHeight",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": ""
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "fieldHeight"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:location",
+            "@type": "ngsi-ld:Geoproperty",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "location"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Organization Identifier"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "schema:begin",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "DateTime that the treatment REALY begun"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "begin"
+                }
+            ]
+        },
+        {
+            "@id": "schema:estimatedBegin",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "DateTime to estimate a begin to treatment"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "estimatedBegin"
+                }
+            ]
+        },
+        {
+            "@id": "schema:duration",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Tthe REAL durantion of the treatment"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "duration"
+                }
+            ]
+        },
+        {
+            "@id": "schema:estimatedDuration",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Tthe REAL durantion of the treatment"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "estimatedDuration"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:radius",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The radius to create an area for the treatment"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "radius"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:treatmentType",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The treatment type"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "treatmentType"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:location",
+            "@type": "ngsi-ld:Geoproperty",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "location"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Profile UUID"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:seedType",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The seed types used in the current field"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "seedType"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:channel1",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "channel1"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:channel2",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "channel2"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:channel3",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "channel3"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:channel4",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "channel4"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:channel5",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "channel5"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Car UUID"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:ownedBy",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "ownedBy"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:deviceState",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "State of this device from an operational point of view. Its value can be vendor dependent."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "deviceState"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:serialNumber",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The serial number assigned by the manufacturer."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "serialNumber"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:usedBy",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship to a Treatment, this Device is usedBy the Treatment Entity to retrive data"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "usedBy"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:supportedProtocol",
+            "@type": "ngsi-ld:EnumProperty",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "This will differentiate a Car Master ( LTE ) or Car Slave ( BLE )."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "supportedProtocol"
+                }
+            ]
+        },
+        {
+            "@id": "ngsi-ld:location",
+            "@type": "ngsi-ld:GeoProperty",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Geoproperty. Geojson reference to the item. Point"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "location"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:voltage",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Car Voltage value corresponding to this observation."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "voltage"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:powerConsumption",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Power consumed by the Car."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "powerConsumption"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:powerFactor",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Power factor or the ratio of working power of the Car corresponding to this observation."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "powerFactor"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:frequency",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Car's voltage frequency observed.'"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "frequency"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Channel UUID"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:usedBy",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship to a Treatment, this Device is usedBy the Treatment Entity to retrive data"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "usedBy"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:observationDateTime",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Last reported time of observation."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "observationDateTime"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:currentValue",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Current value of the streetlight corresponding to this observation."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "currentValue"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:id",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Sensor Node UUID"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:ownedBy",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "ownedBy"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:batteryLevel",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Device battery level. It must be equal to 100.0 when battery is full. 0.0 when battery is empty. -1 when transiently cannot be determined."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "batteryLevel"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:deviceState",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "State of this device from an operational point of view. Its value can be vendor dependent."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "deviceState"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:serialNumber",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The serial number assigned by the manufacturer."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "serialNumber"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:usedBy",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship to a Treatment, this Device is usedBy the Treatment Entity to retrive data"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "usedBy"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:quantum",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "PAR Measured by SQ-521 (umol/m^-2/s^-1) - OBS: The UNIT CODE is not available, it is under review by UN/CEFACT"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "quantum"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:soilHumidity",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Soil Humidity measured by SMTEC"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "soilHumidity"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:soilTemperature",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Soil Temperature measured by SMTEC"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "soilTemperature"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:soilConductivity",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Soil Electric Conductivity measured by SMTEC"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "soilConductivity"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:soilPh",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Soil pH measured by pH sensor"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "soilPh"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:airHumidity",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Air Humidity measured by BME280"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "airHumidity"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:airTemperature",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Air Temperature measured by BME280"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "airTemperature"
+                }
+            ]
+        },
+        {
+            "@id": "ngsi-ld:location",
+            "@type": "ngsi-ld:GeoProperty",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Geoproperty. Geojson reference to the item. Point"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "location"
+                }
+            ]
+        }
+    ]
+}
