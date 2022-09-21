@@ -8,7 +8,7 @@ field:
       description: Field UUID
       type: string
       format: uri
-      example: urn:ngsi-ld:Building:[Field_uuid]
+      example: urn:ngsi-ld:Field:[Field_uuid]
       x-ngsi:
         type: Property
 
