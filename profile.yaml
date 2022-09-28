@@ -35,82 +35,28 @@ profile:
         model: https://schema.org/Text
         type: Property
 
-    channel1:
-      anyOf:
-        - description: 'Relationship property: Identifier format of any NGSI entity'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+    channelsInProfile:
+      description: 'This create an array to send command to the channel in order to 
+                    control the channels. See the file How to Send data to Control the Channels.js
+                    in the PATH: OneDrive../T-LAMP/_EXECUCAO/'
+      type: array
+      properties:
+        channelPhysical: 
           type: string
-        - description: 'Relationship property: Identifier format of any NGSI entity'
-          format: uri
+        channelType:
+          enum:
+            - LED
+            - Infrared
           type: string
-      description: 'Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID.'
+        channelProfile:
+          type: array
+          properties:
+            timeOn:
+              description: This is the duration TIME that this channel will be ON for 
+              type: string
+            channelValue:
+              type: number
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/channel1/"
-        uri-prefix: "https://tlampproject.pt/dataModel/"
-        type: Relationship
-
-    channel2:
-      anyOf:
-        - description: 'Relationship property: Identifier format of any NGSI entity'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: Identifier format of any NGSI entity'
-          format: uri
-          type: string
-      description: 'Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID.'
-      x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/channel2/"
-        uri-prefix: "https://tlampproject.pt/dataModel/"
-        type: Relationship
-
-    channel3:
-      anyOf:
-        - description: 'Relationship property: Identifier format of any NGSI entity'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: Identifier format of any NGSI entity'
-          format: uri
-          type: string
-      description: 'Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID.'
-      x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/channel3/"
-        uri-prefix: "https://tlampproject.pt/dataModel/"
-        type: Relationship
-
-    channel4:
-      anyOf:
-        - description: 'Relationship property: Identifier format of any NGSI entity'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: Identifier format of any NGSI entity'
-          format: uri
-          type: string
-      description: 'Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID.'
-      x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/channel4/"
-        uri-prefix: "https://tlampproject.pt/dataModel/"
-        type: Relationship
-
-    channel5:
-      anyOf:
-        - description: 'Relationship property: Identifier format of any NGSI entity'
-          maxLength: 256
-          minLength: 1
-          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
-          type: string
-        - description: 'Relationship property: Identifier format of any NGSI entity'
-          format: uri
-          type: string
-      description: 'Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID.'
-      x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/channel5/"
-        uri-prefix: "https://tlampproject.pt/dataModel/"
-        type: Relationship
+        uri: "https://tlampproject.pt/dataModel/channelsInProfile/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"  
+        type: Property

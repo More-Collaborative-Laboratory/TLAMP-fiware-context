@@ -115,8 +115,32 @@ car:
       x-ngsi:
         model: https://schema.org/Number
         type: Property
-
-
+    #12º
+    channelsInTheCar:
+      description: 'This create an array to send command to the channel in order to 
+                    control the channels. See the file How to Send data to Control the Channels.js
+                    in the PATH: OneDrive../T-LAMP/_EXECUCAO/'
+      type: array
+      properties:
+        channelPhysical: 
+          type: string
+        channelType:
+          enum:
+            - LED
+            - Infrared
+          type: string
+        channelProfile:
+          type: array
+          properties:
+            lastTimeUpdated:
+              type: string
+            channelValue:
+              type: number
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/channelsInTheCar/"
+        uri-prefix: "https://tlampproject.pt/dataModel/"  
+        type: Property
+            
 
 SupportedProtocol: 
   description: >

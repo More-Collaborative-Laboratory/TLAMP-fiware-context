@@ -31,8 +31,8 @@ components:
     Car: 
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/car.yaml#/car"
     # Definition of the Channel Entity
-    Channel:
-      $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/channel.yaml#/channel"
+    #Channel:
+      #$ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/channel.yaml#/channel"
     # Definition of Sensor Node Entity
     Sensor: 
       $ref: "https://raw.githubusercontent.com/More-Collaborative-Laboratory/TLAMP-fiware-context/main/sensor.yaml#/sensor"
