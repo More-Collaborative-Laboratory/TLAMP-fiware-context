@@ -8,7 +8,6 @@
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "Car": "tlamp:Car",
-        "Channel": "tlamp:Channel",
         "Field": "tlamp:Field",
         "Organization": "tlamp:Organization",
         "Profile": "tlamp:Profile",
@@ -43,41 +42,17 @@
             "@id": "https://wiki.openstreetmap.org/wiki/Tag:building%3Dcategory",
             "@type": "@vocab"
         },
-        "channel1": {
-            "@id": "tlamp:channel1/",
-            "@type": "@id"
+        "channelsInProfile": {
+            "@id": "tlamp:channelsInProfile/",
+            "@type": "xsd:array"
         },
-        "channel2": {
-            "@id": "tlamp:channel2/",
-            "@type": "@id"
-        },
-        "channel3": {
-            "@id": "tlamp:channel3/",
-            "@type": "@id"
-        },
-        "channel4": {
-            "@id": "tlamp:channel4/",
-            "@type": "@id"
-        },
-        "channel5": {
-            "@id": "tlamp:channel5/",
-            "@type": "@id"
-        },
-        "channelType": {
-            "@id": "tlamp:channelType",
-            "@type": "xsd:string"
-        },
-        "controllingMethod": {
-            "@id": "tlamp:controllingMethod",
-            "@type": "xsd:string"
+        "channelsInTheCar": {
+            "@id": "tlamp:channelsInTheCar/",
+            "@type": "xsd:array"
         },
         "coordinates": {
             "@id": "ngsi-ld:coordinates",
             "@type": "xsd:array"
-        },
-        "currentValue": {
-            "@id": "tlamp:currentValue",
-            "@type": "xsd:number"
         },
         "dateCreated": {
             "@id": "schema:dateCreated/",
@@ -124,10 +99,6 @@
             "@type": "xsd:string"
         },
         "location": "ngsi-ld:location",
-        "observationDateTime": {
-            "@id": "tlamp:observationDateTime",
-            "@type": "xs:dateTime"
-        },
         "ownedBy": {
             "@id": "tlamp:ownedBy/",
             "@type": "@id"
@@ -307,25 +278,6 @@
                 {
                     "@language": "en",
                     "@value": "Car"
-                }
-            ],
-            "rdfs:subClassOf": {
-                "@id": "schema:Thing"
-            }
-        },
-        {
-            "@id": "tlamp:Channel",
-            "@type": "rdfs:Class",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Channel for T-LAMP Project."
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "Channel"
                 }
             ],
             "rdfs:subClassOf": {
@@ -832,82 +784,18 @@
             ]
         },
         {
-            "@id": "tlamp:channel1",
-            "@type": "ngsi-ld:Relationship",
+            "@id": "tlamp:channelsInProfile",
+            "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID."
+                    "@value": "This create an array to send command to the channel in order to  control the channels. See the file How to Send data to Control the Channels.js in the PATH: OneDrive../T-LAMP/_EXECUCAO/"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "channel1"
-                }
-            ]
-        },
-        {
-            "@id": "tlamp:channel2",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID."
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "channel2"
-                }
-            ]
-        },
-        {
-            "@id": "tlamp:channel3",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID."
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "channel3"
-                }
-            ]
-        },
-        {
-            "@id": "tlamp:channel4",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID."
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "channel4"
-                }
-            ]
-        },
-        {
-            "@id": "tlamp:channel5",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID."
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "channel5"
+                    "@value": "channelsInProfile"
                 }
             ]
         },
@@ -1088,66 +976,18 @@
             ]
         },
         {
-            "@id": "tlamp:id",
+            "@id": "tlamp:channelsInTheCar",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
                     "@language": "en",
-                    "@value": "Channel UUID"
+                    "@value": "This create an array to send command to the channel in order to  control the channels. See the file How to Send data to Control the Channels.js in the PATH: OneDrive../T-LAMP/_EXECUCAO/"
                 }
             ],
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "id"
-                }
-            ]
-        },
-        {
-            "@id": "tlamp:usedBy",
-            "@type": "ngsi-ld:Relationship",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Relationship to a Treatment, this Device is usedBy the Treatment Entity to retrive data"
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "usedBy"
-                }
-            ]
-        },
-        {
-            "@id": "tlamp:observationDateTime",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Last reported time of observation."
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "observationDateTime"
-                }
-            ]
-        },
-        {
-            "@id": "tlamp:currentValue",
-            "@type": "ngsi-ld:Property",
-            "rdfs:comment": [
-                {
-                    "@language": "en",
-                    "@value": "Current value of the streetlight corresponding to this observation."
-                }
-            ],
-            "rdfs:label": [
-                {
-                    "@language": "en",
-                    "@value": "currentValue"
+                    "@value": "channelsInTheCar"
                 }
             ]
         },
