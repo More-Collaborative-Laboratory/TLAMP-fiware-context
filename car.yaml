@@ -141,12 +141,17 @@ definitions:
         type: string
       channelProfile:
         type: array
-        properties:
-          lastTimeUpdated:
-            type: string
-          channelValue:
-            type: number
+        items:
+          $ref: '#/definitions/profile'
 
+  profile:
+    type: object
+    properties:
+      lastTimeUpdated:
+        type: string
+      channelValue:
+        type: number
+        
 SupportedProtocol: 
   description: >
       -   `lte-m`
