@@ -130,20 +130,18 @@ car:
 
 definitions:
   channelObject:
-  type: object
-  properties:
-    channelPhysical: 
-      type: string
-    channelType:
-      enum:
-        - LED
-        - IR
-      type: string
-    channelProfile:
-      type: array
-      items:
-        type: object     
-        properties:        
+    type: object
+    properties:
+      channelPhysical: 
+        type: string
+      channelType:
+        enum:
+          - LED
+          - IR
+        type: string
+      channelProfile:
+        type: array
+        properties:
           lastTimeUpdated:
             type: string
           channelValue:
