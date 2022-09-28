@@ -142,16 +142,16 @@ definitions:
       channelProfile:
         type: array
         items:
-          $ref: '#/definitions/profile'
+          $ref: '#/definitions/timeValue'
 
-  profile:
+  timeValue:
     type: object
     properties:
       lastTimeUpdated:
         type: string
       channelValue:
         type: number
-        
+
 SupportedProtocol: 
   description: >
       -   `lte-m`
