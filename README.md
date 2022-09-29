@@ -11,10 +11,10 @@ Describes the organization entity
    -  Attribute type: **Property**. [taxID](https://schema.org/taxID)
    -  Required
 -  `dateCreated`: Date that the Organization was Created in data base.
-   -  Attribute type: **Property**. [](https://schema.org/dateCreated/)
+   -  Attribute type: **Property**. [dateCreated](https://schema.org/dateCreated)
    -  Optional
 -  `dateModified`: Date that any information about Organization was modified.
-   -  Attribute type: **Property**. [](https://schema.org/dateModified/)
+   -  Attribute type: **Property**. [dateModified](https://schema.org/dateModified)
    -  Optional
 -  `email`: Contact email address
    -  Attribute type: **Property**. [email](https://schema.org/email)
@@ -40,6 +40,9 @@ Field Entity for T-LAMP Project.
 -  `id`: Field UUID
    -  Attribute type: **Property**. 
    -  Optional
+-  `name`: The Field name
+   -  Attribute type: **Property**. 
+   -  Optional
 -  `address`: The company's headquarters address
    -  Attribute type: **Property**. [address](https://schema.org/address)
    -  Optional
@@ -47,10 +50,10 @@ Field Entity for T-LAMP Project.
    -  Attribute type: **EnumProperty**. 
    -  Optional
 -  `dateCreated`: Date that the Organization was Created in data base.
-   -  Attribute type: **Property**. [](https://schema.org/dateCreated/)
+   -  Attribute type: **Property**. [dateCreated](https://schema.org/dateCreated)
    -  Optional
 -  `dateModified`: Date that any information about Organization was modified.
-   -  Attribute type: **Property**. [](https://schema.org/dateModified/)
+   -  Attribute type: **Property**. [dateModified](https://schema.org/dateModified)
    -  Optional
 -  `ownedBy`: Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID.
    -  Attribute type: **Relationship**. 
@@ -61,7 +64,7 @@ Field Entity for T-LAMP Project.
 -  `fieldWidth`: 
    -  Attribute type: **Property**. [serialNumber](https://schema.org/serialNumber)
    -  Optional
--  `fieldHeight`: 
+-  `fieldLength`: 
    -  Attribute type: **Property**. [serialNumber](https://schema.org/serialNumber)
    -  Optional
 -  `location`: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon
@@ -97,6 +100,9 @@ Describes the treatment entity
 -  `treatmentType`: The treatment type
    -  Attribute type: **Property**. [Text](https://schema.org/Text)
    -  Optional
+-  `hasA`: Relationship to Profile, this devices is hasA: urn:ngsi-ld:Profile:Profile_UUID.
+   -  Attribute type: **Relationship**. 
+   -  Optional
 -  `location`: Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon
    -  Attribute type: **Geoproperty**. 
    -  Optional
@@ -109,7 +115,7 @@ Profile Entity for T-LAMP Project.
 -  `id`: Profile UUID
    -  Attribute type: **Property**. 
    -  Optional
--  `predefined`: Predefined value to actuate in the LED and IR channels. One of : `predefined 1`, `predefined 2`, `predefined 3`, `predefined 4`, `predefined 5`.
+-  `name`: Profile Name
    -  Attribute type: **Property**. 
    -  Optional
 -  `seedType`: The seed types used in the current field
