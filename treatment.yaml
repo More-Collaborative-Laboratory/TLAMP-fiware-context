@@ -72,6 +72,22 @@ treatment:
       x-ngsi:
         model: https://schema.org/Text
         type: Property
+
+    hasA:
+      anyOf:
+        - description: 'Relationship property: Identifier format of any NGSI entity'
+          maxLength: 256
+          minLength: 1
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
+          type: string
+        - description: 'Relationship property: Identifier format of any NGSI entity'
+          format: uri
+          type: string
+      description: 'Relationship to Profile, this devices is hasA: urn:ngsi-ld:Profile:Profile_UUID.'
+      x-ngsi:
+        uri: "https://tlampproject.pt/dataModel/hasA"
+        uri-prefix: "https://tlampproject.pt/dataModel/"
+        type: Relationship
     
     location:
       description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'

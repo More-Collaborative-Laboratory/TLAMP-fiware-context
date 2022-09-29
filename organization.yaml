@@ -36,18 +36,18 @@ organization:
       description: Date that the Organization was Created in data base.
       type: string
       x-ngsi:
-        uri: "https://schema.org/dateCreated/"
+        uri: "https://schema.org/dateCreated"
         uri-prefix: "https://schema.org/"
-        model: "https://schema.org/dateCreated/"
+        model: "https://schema.org/dateCreated"
         type: Property
     
     dateModified:
       description: Date that any information about Organization was modified.
       type: string
       x-ngsi:
-        uri: "https://schema.org/dateModified/"
+        uri: "https://schema.org/dateModified"
         uri-prefix: "https://schema.org/"
-        model: "https://schema.org/dateModified/"
+        model: "https://schema.org/dateModified"
         type: Property     
 
     email:

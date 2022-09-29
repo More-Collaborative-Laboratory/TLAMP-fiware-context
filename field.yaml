@@ -12,6 +12,14 @@ field:
       x-ngsi:
         type: Property
 
+    name:
+      description: The Field name
+      type: string
+      format: uri
+      example: Training field, Allianz Arena ...
+      x-ngsi:
+        type: Property
+
     address:
       description: The company's headquarters address
       type: object
@@ -72,18 +80,18 @@ field:
       description: Date that the Organization was Created in data base.
       type: string
       x-ngsi:
-        uri: "https://schema.org/dateCreated/"
+        uri: "https://schema.org/dateCreated"
         uri-prefix: "https://schema.org/"
-        model: "https://schema.org/dateCreated/"
+        model: "https://schema.org/dateCreated"
         type: Property
     
     dateModified:
       description: Date that any information about Organization was modified.
       type: string
       x-ngsi:
-        uri: "https://schema.org/dateModified/"
+        uri: "https://schema.org/dateModified"
         uri-prefix: "https://schema.org/"
-        model: "https://schema.org/dateModified/"
+        model: "https://schema.org/dateModified"
         type: Property 
 
     ownedBy:
@@ -98,7 +106,7 @@ field:
           type: string
       description: 'Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID.'
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/ownedBy/"
+        uri: "https://tlampproject.pt/dataModel/ownedBy"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Relationship
 
@@ -106,7 +114,7 @@ field:
       description: ' The seed types used in the current field'
       type: string
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/seedType/"
+        uri: "https://tlampproject.pt/dataModel/seedType"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         model: https://schema.org/Text
         type: Property
@@ -114,15 +122,15 @@ field:
     fieldWidth:
       type: number
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/fieldWidth/"
+        uri: "https://tlampproject.pt/dataModel/fieldWidth"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         model: https://schema.org/serialNumber
         type: Property
 
-    fieldHeight:
+    fieldLength:
       type: number
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/fieldHeight/"
+        uri: "https://tlampproject.pt/dataModel/fieldLength"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         model: https://schema.org/serialNumber
         type: Property

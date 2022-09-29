@@ -24,7 +24,7 @@ sensor:
           type: string
       description: 'Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID.'
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/ownedBy/"
+        uri: "https://tlampproject.pt/dataModel/ownedBy"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Relationship
     #3º
@@ -67,7 +67,7 @@ sensor:
           type: string
       description: 'Relationship to a Treatment, this Device is usedBy the Treatment Entity to retrive data'
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/usedBy/"
+        uri: "https://tlampproject.pt/dataModel/usedBy"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Relationship
 
@@ -75,7 +75,7 @@ sensor:
       description: 'PAR Measured by SQ-521 (umol/m^-2/s^-1) - OBS: The UNIT CODE is not available, it is under review by UN/CEFACT'
       type: number
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/quantum/"
+        uri: "https://tlampproject.pt/dataModel/quantum"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Property
 
@@ -84,7 +84,7 @@ sensor:
       description: 'Soil Humidity measured by SMTEC'
       type: number
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/soilHumidity/"
+        uri: "https://tlampproject.pt/dataModel/soilHumidity"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Property        
     
@@ -92,7 +92,7 @@ sensor:
       description: 'Soil Temperature measured by SMTEC'
       type: number
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/soilTemperature/"
+        uri: "https://tlampproject.pt/dataModel/soilTemperature"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Property        
     
@@ -100,7 +100,7 @@ sensor:
       description: 'Soil Electric Conductivity measured by SMTEC'
       type: number
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/soilConductivity/"
+        uri: "https://tlampproject.pt/dataModel/soilConductivity"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Property       
     
@@ -108,7 +108,7 @@ sensor:
       description: 'Soil pH measured by pH sensor'
       type: number
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/soilPh/"
+        uri: "https://tlampproject.pt/dataModel/soilPh"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Property        
 
@@ -116,7 +116,7 @@ sensor:
       description: 'Air Humidity measured by BME280'
       type: number
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/airHumidity/"
+        uri: "https://tlampproject.pt/dataModel/airHumidity"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Property        
 
@@ -124,7 +124,7 @@ sensor:
       description: 'Air Temperature measured by BME280'
       type: number
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/airTemperature/"
+        uri: "https://tlampproject.pt/dataModel/airTemperature"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Property
     

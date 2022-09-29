@@ -12,25 +12,19 @@ profile:
       x-ngsi:
         type: Property
 
-    predefined:
-      description: ' Predefined value to actuate in the LED and IR channels '
-      enum:
-        - predefined 1
-        - predefined 2
-        - predefined 3
-        - predefined 4
-        - predefined 5
+    name:
+      description: Profile Name
       type: string
+      format: uri
+      example: Profile to actuate in the seed Type 1.
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/predefined/"
-        uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Property
 
     seedType:
       description: ' The seed types used in the current field'
       type: string
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/seedType/"
+        uri: "https://tlampproject.pt/dataModel/seedType"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         model: https://schema.org/Text
         type: Property
@@ -43,7 +37,7 @@ profile:
       items:
         $ref: '#/definitions/channelObject'
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/channelsInProfile/"
+        uri: "https://tlampproject.pt/dataModel/channelsInProfile"
         uri-prefix: "https://tlampproject.pt/dataModel/"  
         type: Property
 

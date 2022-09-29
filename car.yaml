@@ -24,7 +24,7 @@ car:
           type: string
       description: 'Relationship to Organization, this devices is ownedBy: urn:ngsi-ld:Organization:Organization_UUID.'
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/ownedBy/"
+        uri: "https://tlampproject.pt/dataModel/ownedBy"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Relationship
     #3º
@@ -54,7 +54,7 @@ car:
           type: string
       description: 'Relationship to a Treatment, this Device is usedBy the Treatment Entity to retrive data'
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/usedBy/"
+        uri: "https://tlampproject.pt/dataModel/usedBy"
         uri-prefix: "https://tlampproject.pt/dataModel/"
         type: Relationship   
     #6º
@@ -124,7 +124,7 @@ car:
       items:
         $ref: '#/definitions/channelObject'
       x-ngsi:
-        uri: "https://tlampproject.pt/dataModel/channelsInTheCar/"
+        uri: "https://tlampproject.pt/dataModel/channelsInTheCar"
         uri-prefix: "https://tlampproject.pt/dataModel/"  
         type: Property
 
@@ -139,18 +139,11 @@ definitions:
           - LED
           - IR
         type: string
-      channelProfile:
-        type: array
-        items:
-          $ref: '#/definitions/timeValue'
-
-  timeValue:
-    type: object
-    properties:
-      lastTimeUpdated:
+      updatedAt:
         type: string
       channelValue:
         type: number
+      
 
 SupportedProtocol: 
   description: >
