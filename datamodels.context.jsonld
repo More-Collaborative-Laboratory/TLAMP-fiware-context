@@ -3,7 +3,7 @@
         "type": "@type",
         "id": "@id",
         "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
-        "fiware": "https://tlampproject.pt/dataModel/",
+        "tlamp": "https://tlampproject.pt/dataModel/",
         "schema": "https://schema.org/",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
