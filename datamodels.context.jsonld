@@ -3,7 +3,7 @@
         "type": "@type",
         "id": "@id",
         "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
-        "tlamp": "https://tlampproject.pt/dataModel/",
+        "fiware": "https://tlampproject.pt/dataModel/",
         "schema": "https://schema.org/",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
@@ -23,11 +23,11 @@
             "@type": "xsd:string"
         },
         "airHumidity": {
-            "@id": "tlamp:airHumidity/",
+            "@id": "tlamp:airHumidity",
             "@type": "xsd:number"
         },
         "airTemperature": {
-            "@id": "tlamp:airTemperature/",
+            "@id": "tlamp:airTemperature",
             "@type": "xsd:number"
         },
         "batteryLevel": {
@@ -43,11 +43,11 @@
             "@type": "@vocab"
         },
         "channelsInProfile": {
-            "@id": "tlamp:channelsInProfile/",
+            "@id": "tlamp:channelsInProfile",
             "@type": "xsd:array"
         },
         "channelsInTheCar": {
-            "@id": "tlamp:channelsInTheCar/",
+            "@id": "tlamp:channelsInTheCar",
             "@type": "xsd:array"
         },
         "coordinates": {
@@ -55,11 +55,11 @@
             "@type": "xsd:array"
         },
         "dateCreated": {
-            "@id": "schema:dateCreated/",
+            "@id": "schema:dateCreated",
             "@type": "xsd:string"
         },
         "dateModified": {
-            "@id": "schema:dateModified/",
+            "@id": "schema:dateModified",
             "@type": "xsd:string"
         },
         "deviceState": {
@@ -82,25 +82,33 @@
             "@id": "schema:Schedule",
             "@type": "xsd:string"
         },
-        "fieldHeight": {
-            "@id": "tlamp:fieldHeight/",
+        "fieldLength": {
+            "@id": "tlamp:fieldLength",
             "@type": "xsd:number"
         },
         "fieldWidth": {
-            "@id": "tlamp:fieldWidth/",
+            "@id": "tlamp:fieldWidth",
             "@type": "xsd:number"
         },
         "frequency": {
             "@id": "tlamp:frequency",
             "@type": "xsd:number"
         },
+        "hasA": {
+            "@id": "tlamp:hasA",
+            "@type": "@id"
+        },
         "legalName": {
             "@id": "tlamp:legalName",
             "@type": "xsd:string"
         },
         "location": "ngsi-ld:location",
+        "name": {
+            "@id": "tlamp:name",
+            "@type": "xs:anyURI"
+        },
         "ownedBy": {
-            "@id": "tlamp:ownedBy/",
+            "@id": "tlamp:ownedBy",
             "@type": "@id"
         },
         "postalCode": {
@@ -115,12 +123,8 @@
             "@id": "tlamp:powerFactor",
             "@type": "xsd:number"
         },
-        "predefined": {
-            "@id": "tlamp:predefined/",
-            "@type": "xsd:string"
-        },
         "quantum": {
-            "@id": "tlamp:quantum/",
+            "@id": "tlamp:quantum",
             "@type": "xsd:number"
         },
         "radius": {
@@ -128,7 +132,7 @@
             "@type": "xsd:number"
         },
         "seedType": {
-            "@id": "tlamp:seedType/",
+            "@id": "tlamp:seedType",
             "@type": "xsd:string"
         },
         "serialNumber": {
@@ -136,19 +140,19 @@
             "@type": "xsd:string"
         },
         "soilConductivity": {
-            "@id": "tlamp:soilConductivity/",
+            "@id": "tlamp:soilConductivity",
             "@type": "xsd:number"
         },
         "soilHumidity": {
-            "@id": "tlamp:soilHumidity/",
+            "@id": "tlamp:soilHumidity",
             "@type": "xsd:number"
         },
         "soilPh": {
-            "@id": "tlamp:soilPh/",
+            "@id": "tlamp:soilPh",
             "@type": "xsd:number"
         },
         "soilTemperature": {
-            "@id": "tlamp:soilTemperature/",
+            "@id": "tlamp:soilTemperature",
             "@type": "xsd:number"
         },
         "streetAddress": {
@@ -180,7 +184,7 @@
             "@type": "xsd:string"
         },
         "usedBy": {
-            "@id": "tlamp:usedBy/",
+            "@id": "tlamp:usedBy",
             "@type": "@id"
         },
         "voltage": {
@@ -480,6 +484,22 @@
             ]
         },
         {
+            "@id": "tlamp:name",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "The Field name"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "name"
+                }
+            ]
+        },
+        {
             "@id": "schema:address",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
@@ -592,7 +612,7 @@
             ]
         },
         {
-            "@id": "tlamp:fieldHeight",
+            "@id": "tlamp:fieldLength",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -603,7 +623,7 @@
             "rdfs:label": [
                 {
                     "@language": "en",
-                    "@value": "fieldHeight"
+                    "@value": "fieldLength"
                 }
             ]
         },
@@ -736,6 +756,22 @@
             ]
         },
         {
+            "@id": "tlamp:hasA",
+            "@type": "ngsi-ld:Relationship",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Relationship to Profile, this devices is hasA: urn:ngsi-ld:Profile:Profile_UUID."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "hasA"
+                }
+            ]
+        },
+        {
             "@id": "tlamp:location",
             "@type": "ngsi-ld:Geoproperty",
             "rdfs:comment": [
@@ -764,6 +800,22 @@
                 {
                     "@language": "en",
                     "@value": "id"
+                }
+            ]
+        },
+        {
+            "@id": "tlamp:name",
+            "@type": "ngsi-ld:Property",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Profile Name"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "name"
                 }
             ]
         },
