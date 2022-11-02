@@ -3,7 +3,7 @@
         "type": "@type",
         "id": "@id",
         "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
-        "tlamp": "https://tlampproject.pt/dataModel/",
+        "fiware": "https://tlampproject.pt/dataModel/",
         "schema": "https://schema.org/",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
@@ -35,7 +35,7 @@
             "@type": "xsd:undefined"
         },
         "begin": {
-            "@id": "schema:Schedule",
+            "@id": "tlamp:begin",
             "@type": "xsd:string"
         },
         "category": {
@@ -67,7 +67,7 @@
             "@type": "xsd:string"
         },
         "duration": {
-            "@id": "schema:Schedule",
+            "@id": "tlamp:duration",
             "@type": "xsd:string"
         },
         "email": {
@@ -75,11 +75,11 @@
             "@type": "xsd:string"
         },
         "estimatedBegin": {
-            "@id": "schema:Schedule",
+            "@id": "tlamp:estimatedBegin",
             "@type": "xsd:string"
         },
         "estimatedDuration": {
-            "@id": "schema:Schedule",
+            "@id": "tlamp:estimatedDuration",
             "@type": "xsd:string"
         },
         "fieldLength": {
@@ -660,7 +660,7 @@
             ]
         },
         {
-            "@id": "schema:begin",
+            "@id": "tlamp:begin",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -676,7 +676,7 @@
             ]
         },
         {
-            "@id": "schema:estimatedBegin",
+            "@id": "tlamp:estimatedBegin",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -692,7 +692,7 @@
             ]
         },
         {
-            "@id": "schema:duration",
+            "@id": "tlamp:duration",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
@@ -708,7 +708,7 @@
             ]
         },
         {
-            "@id": "schema:estimatedDuration",
+            "@id": "tlamp:estimatedDuration",
             "@type": "ngsi-ld:Property",
             "rdfs:comment": [
                 {
